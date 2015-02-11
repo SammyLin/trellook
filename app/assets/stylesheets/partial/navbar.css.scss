@@ -1,0 +1,42 @@
+.navbar_warp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: #4285f4;
+  width: 100%;
+  &:before {
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    content: "";
+    height: 56px;
+    left: -2%;
+    position: fixed;
+    width: 104%;
+    will-change: top,left;
+  }
+
+}
+.navber {
+  background: #4285f4;
+  padding: 0 1em;
+  .logo, .logout {
+    display: block;
+    line-height: 56px;
+  }
+  .logout {
+    float: right;
+    font-size: 1.2em;
+    a {
+      color: #FFF;
+      &:hover {
+        color: #F8E5EE;
+      }
+    }
+  }
+  .logo {
+    float: left;
+    font-family: 'Lobster', cursive;
+    color: #FFF;
+    font-size: 2em;
+  }
+}

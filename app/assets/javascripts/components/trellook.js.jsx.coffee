@@ -4,9 +4,18 @@ LoginButton = React.createClass(
   render: ->
     `<a href="#" onClick={this.props.onButtonClicked} className="login_link">Login Trello</a>`
 )
+Navbar = React.createClass(
+  render: ->
+    `<div className='navbar_warp'>
+      <div className='navber'>
+        <div className='logo'>Trellook</div>
+        <div className='logout'><LogoutButton onClick={this.props.onButtonClicked}/></div>
+      </div>
+    </div>`
+)
 LogoutButton = React.createClass(
   render: ->
-    `<a href="#" onClick={this.props.onButtonClicked}>Log Out</a>`
+    `<a href="#" onClick={this.props.onButtonClicked}><i className='fa fa-sign-out'></i></a>`
 )
 
 Trellook = React.createClass(
@@ -34,7 +43,7 @@ Trellook = React.createClass(
     if @state.connect_state is true
       `<div>
         <TrelloActionItems />
-        <LogoutButton onButtonClicked={_this.handleLogout} />
+        <Navbar onButtonClicked={_this.handleLogout} />
       </div>
       `
     else
