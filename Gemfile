@@ -19,11 +19,14 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 
+gem 'react-rails', github: 'reactjs/react-rails', branch: 'master'
+
 group :development do
-  gem 'spring'
+  # gem 'spring'
   gem 'better_errors'
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'guard-rails'
   gem 'guard-livereload'
 end
 
