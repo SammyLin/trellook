@@ -11,11 +11,17 @@ TrelloActionItems = React.createClass(
           _this.setState items: _this.state.items.concat(actions)
     {items: []}
   render: ->
-    R.ul({}, [
+    R.div({className: 'mention_list' }, [
       for item in this.state.items
         regex = /^(@[a-z0-9]+)(?=$|\W)/
         if item.data.text.match regex
-          `<li>{item.memberCreator.fullName} Say {item.data.text} - <a href={'https://trello.com/c/' + item.data.card.shortLink}>連結</a></li>`
+          `<div className='mention_warp'>
+            <div className='mention_item'>
+              <div className='memberCreator'>{item.memberCreator.fullName}</div>
+              <div className='mention_main'><div className='mention_content'>{item.data.text}</div></div>
+              <div className='mention_link'><a href={'https://trello.com/c/' + item.data.card.shortLink}>Permalink</a></div>
+            </div>
+          </div>`
       ])
 )
 window.TrelloActionItems = TrelloActionItems

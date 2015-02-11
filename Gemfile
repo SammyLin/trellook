@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'react-rails', github: 'reactjs/react-rails', branch: 'master'
 
+gem 'compass-rails', '~> 1.1.3'
+
 group :development do
   # gem 'spring'
   gem 'better_errors'

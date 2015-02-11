@@ -1,0 +1,50 @@
+.mention_list {
+  @include border-radius(3px);
+  background: #fff;
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  margin-bottom: 0.5em;
+  overflow: hidden;
+  width: 60%;
+  margin: 1em auto;
+}
+
+.mention_warp {
+  border-bottom: 1px #e5e6e9 solid;
+  &:last_child {
+    border-bottom:none;
+  }
+}
+.mention_item {
+  padding: 1.5em;
+  display: flex;
+  .memberCreator {
+    color: #d23f31;
+    font-weight: 800;
+    width: 184px;
+  }
+  .memberCreator, .mention_link {
+    display: inline-block;
+  }
+  .mention_main {
+    display: flex;
+    width: 100%;
+  }
+  .mention_content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .mention_link {
+    float: right;
+    width: 80px;
+    a {
+      color: #7C7C7C;
+      text-decoration: none;
+      font-size: 0.75em;
+      &:hover {
+        color: #383D3B;
+      }
+    }
+  }
+}
