@@ -5,11 +5,21 @@ R = React.DOM
 TrelloActionItems = React.createClass(
   getInitialState: ->
     _this = this
+    boards_count = 0
+    tmp_items = []
     Trello.get 'members/me/boards', (boards) ->
       for board in boards
         Trello.get 'boards/' + board.id + '/actions?filter=commentCard', (actions) ->
-          _this.setState items: _this.state.items.concat(actions)
+          tmp_items = tmp_items.concat(actions)
+          boards_count += 1
+          if boards_count == boards.length
+            tmp_items.sort _this.sortDescending
+            _this.setState items: tmp_items
     {items: []}
+
+  sortDescending: (a, b) ->
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+
   render: ->
     R.div({className: 'mention_list' }, [
       for item in this.state.items
