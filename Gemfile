@@ -25,6 +25,8 @@ gem 'compass-rails', '~> 1.1.3'
 
 gem "font-awesome-rails"
 
+gem "figaro"
+
 group :development do
   # gem 'spring'
   gem 'better_errors'
