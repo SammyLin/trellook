@@ -9,7 +9,7 @@ Navbar = React.createClass(
     `<div className='navbar_warp'>
       <div className='navber'>
         <div className='logo'>Trellook</div>
-        <div className='logout'><LogoutButton onClick={this.props.onButtonClicked}/></div>
+        <div className='logout'><LogoutButton onButtonClicked={this.props.onButtonClicked}/></div>
       </div>
     </div>`
 )
@@ -30,14 +30,13 @@ Trellook = React.createClass(
     _this = this
     Trello.authorize
       type: "popup"
-      persist: false
       expiration: "1hour"
       name: "Trellook"
       success: ->
         _this.setState({connect_state: true})
   handleLogout: ->
     Trello.deauthorize()
-    this.setState connect_state: false
+    location.reload()
   render: ->
     _this = this
     if @state.connect_state is true
