@@ -36,10 +36,13 @@ group :development do
   gem 'guard-livereload'
 end
 
+gem 'pg'
 group :development, :test do
-  gem 'pg'
   gem 'pry-rails'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
