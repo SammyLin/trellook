@@ -21,6 +21,19 @@ TrelloActionItems = React.createClass(
       location.reload()
     {items: []}
 
+    # this.hide()
+    # $.post 'ajax/test.html', (data) ->
+    #   $('.result').html data
+# handleRemoveCommentClick = (e) ->
+#   that = this
+#   el = $(e.target)
+#   el.text 'Removing...'
+#   deleteCommentPromise = @api.deleteComment(@props)
+#   deleteCommentPromise.done ->
+#     if _.isFunction(that.props.onCommentRemove)
+#       that.props.onCommentRemove that.props
+#     return
+#   return
   sortDescending: (a, b) ->
     new Date(b.date).getTime() - new Date(a.date).getTime()
 
@@ -31,7 +44,6 @@ TrelloActionItems = React.createClass(
           <div className='mention_item'>
             <div className='memberCreator'>{item.memberCreator.fullName}</div>
             <div className='mention_main'><div className='mention_content'>{item.data.text}</div></div>
-            <div className='mention_link'><a href={'https://trello.com/c/' + item.data.card.shortLink}>Permalink</a></div>
           </div>
         </div>`
       ])
